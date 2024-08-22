@@ -6,19 +6,23 @@
     <title>CoderType</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
     <div class="container">
         <h1 id="title">CoderType</h1>
         <p>CoderType es un juego divertido de mecanografía. Tienes 60 segundos para escribir diferentes fragmentos de código.</p>
-        
+        <div id="theme-toggle" class="theme-icon">
+            <i id="sun-icon" class="fas fa-sun"></i>
+            <i id="moon-icon" class="fas fa-moon"></i>
+        </div>
         <div class="columns">
             <div id="code-container">
                 <pre id="code-display"></pre>
             </div>
             <textarea id="code-input" placeholder="Empieza a escribir..." rows="12"></textarea>
         </div>
-
         <div id="stats">
             <div id="timer">60s</div>
             <div id="errors">Errores: 0</div>

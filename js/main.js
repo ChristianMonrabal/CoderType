@@ -320,3 +320,22 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Toggle between light and dark modes
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        }
+    });
+});
+

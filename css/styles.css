@@ -21,7 +21,6 @@ body {
     color: #fff;
     overflow: hidden;
     white-space: nowrap;
-    border-right: .15em solid white;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
@@ -69,7 +68,6 @@ body {
 #code-display::selection {
     background: none; 
 }
-
 
 #code-input {
     width: 45%;
@@ -131,4 +129,115 @@ button:hover {
 
 #new-snippet-button:hover {
     background-color: #777;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#theme-toggle i {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+#sun-icon {
+    color: #000; 
+    display: none; 
+}
+
+#moon-icon {
+    color: #fff; 
+    display: inline; 
+}
+
+/* Modo oscuro por defecto */
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+body.dark-mode #title {
+    color: #fff; 
+}
+
+body.dark-mode #code-container {
+    background-color: #222;
+}
+
+body.dark-mode #code-input {
+    background-color: #111;
+    color: #fff;
+}
+
+body.dark-mode #code-display {
+    color: #444;
+}
+
+/* Modo claro */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode #title {
+    color: #000; 
+}
+
+body.light-mode #code-container {
+    background-color: #eee;
+}
+
+body.light-mode #code-input {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode #code-display {
+    color: #000;
+}
+
+/* Estilo para los íconos de tema */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#theme-toggle i {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+#sun-icon {
+    color: #000; 
+    display: none; 
+}
+
+#moon-icon {
+    color: #fff;
+    display: inline; 
+}
+
+/* Mostrar los íconos en modo oscuro */
+body.dark-mode #moon-icon {
+    display: inline;
+}
+
+body.dark-mode #sun-icon {
+    display: none;
+}
+
+/* Mostrar los íconos en modo claro */
+body.light-mode #sun-icon {
+    display: inline;
+}
+
+body.light-mode #moon-icon {
+    display: none;
 }
