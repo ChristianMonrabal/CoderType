@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoderType</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">CoderType</h1>
+        <p>CoderType es un juego divertido de mecanografía. Tienes 60 segundos para escribir diferentes fragmentos de código.</p>
+        
+        <div class="columns">
+            <div id="code-container">
+                <pre id="code-display"></pre>
+            </div>
+            <textarea id="code-input" placeholder="Empieza a escribir..." rows="12"></textarea>
+        </div>
+
+        <div id="stats">
+            <div id="timer">60s</div>
+            <div id="errors">Errores: 0</div>
+        </div>
+        <button id="start-button">Comenzar</button>
+        <div id="result"></div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
