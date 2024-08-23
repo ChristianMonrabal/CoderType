@@ -11,10 +11,19 @@
 <body class="dark-mode">
     <div class="container">
         <h1 id="title">CoderType</h1>
-        <p>CoderType es un juego divertido de mecanografía. Tienes 60 segundos para escribir diferentes fragmentos de código.</p>
+        <p>CoderType es un juego divertido de mecanografía. <br>Tienes X tiempo para escribir diferentes fragmentos de código.</p>
         <div id="theme-toggle" class="theme-icon">
             <i id="sun-icon" class="fas fa-sun"></i>
             <i id="moon-icon" class="fas fa-moon"></i>
+        </div>
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="php">PHP</option>
+                <option value="sql">SQL</option>
+                <option value="laravel">Laravel</option>
+            </select>
         </div>
         <div class="columns">
             <div id="code-container">
@@ -23,8 +32,10 @@
             <textarea id="code-input" placeholder="Empieza a escribir..." rows="12"></textarea>
         </div>
         <div id="stats">
-            <div id="timer">60s</div>
-            <div id="errors">Errores: 0</div>
+            <div id="timer">
+                <i class="fas fa-stopwatch"></i> <span id="timer-text"></span>
+            </div>
+            <div id="errors">Errores:</div>
         </div>
         <button id="start-button">Comenzar</button>
         <div id="result"></div>

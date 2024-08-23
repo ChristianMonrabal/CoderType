@@ -1,157 +1,192 @@
-const codeSnippets = [
-    `function isEven(n) {
+const codeSnippets = {
+    javascript: [
+        `function isEven(n) {
     return n % 2 === 0;
 }
 console.log(isEven(4));`,
 
-    `function factorial(n) {
+        `function factorial(n) {
     return n === 0 ? 1 : n * factorial(n - 1);
 }
 console.log(factorial(5));`,
 
-    `const square = x => x * x;
+        `const square = x => x * x;
 console.log(square(9));`,
 
-    `function greet(name) {
+        `function greet(name) {
     return \`Hello, \${name}!\`;
 }
 console.log(greet('Coder'));`,
 
-    `function reverseString(str) {
+        `function reverseString(str) {
     return str.split('').reverse().join('');
 }
 console.log(reverseString('hello'));`,
 
-    `const sum = (a, b) => a + b;
+        `const sum = (a, b) => a + b;
 console.log(sum(3, 4));`,
 
-    `function isPalindrome(str) {
+        `function isPalindrome(str) {
     const cleaned = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
     return cleaned === cleaned.split('').reverse().join('');
 }
-console.log(isPalindrome('racecar'));`,
+console.log(isPalindrome('racecar'));`
+    ],
+    python: [
+        `def is_even(n):
+    return n % 2 == 0
 
-    `function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+print(is_even(4))`,
+
+        `def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))`,
+
+        `numbers = [1, 2, 3, 4]
+doubled = [n * 2 for n in numbers]
+print(doubled)`,
+
+        `def greet(name):
+    return f"Hello, {name}!"
+
+print(greet('Coder'))`,
+
+        `def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string('hello'))`,
+
+        `def is_palindrome(s):
+    s = ''.join(filter(str.isalnum, s)).lower()
+    return s == s[::-1]
+
+print(is_palindrome('racecar'))`,
+
+        `import random
+
+def get_random_int(max):
+    return random.randint(0, max - 1)
+
+print(get_random_int(10))`
+    ],
+    php: [
+        `<?php
+function isEven($n) {
+    return $n % 2 === 0;
 }
-console.log(getRandomInt(10));`,
+echo isEven(4) ? 'Even' : 'Odd';
+?>`,
 
-    `const arr = [1, 2, 3, 4];
-const doubled = arr.map(n => n * 2);
-console.log(doubled);`,
-
-    `function sumArray(arr) {
-    return arr.reduce((acc, num) => acc + num, 0);
-}
-console.log(sumArray([1, 2, 3, 4]));`,
-
-    `function fibonacci(n) {
-    if (n <= 1) return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
-console.log(fibonacci(6));`,
-
-    `const user = {
-    name: 'Alice',
-    age: 25
-};
-console.log(user.name);`,
-
-    `function findMax(arr) {
-    return Math.max(...arr);
-}
-console.log(findMax([1, 2, 3, 4, 5]));`,
-
-    `const doubleNumbers = arr => arr.map(n => n * 2);
-console.log(doubleNumbers([1, 2, 3]));`,
-
-    `const add = (a, b) => a + b;
-console.log(add(5, 10));`,
-
-    `function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-console.log(capitalize('hello'));`,
-
-    `function countVowels(str) {
-    return str.match(/[aeiou]/gi).length;
-}
-console.log(countVowels('hello world'));`,
-
-    `function isOdd(n) {
-    return n % 2 !== 0;
-}
-console.log(isOdd(5));`,
-
-    `const cube = x => x * x * x;
-console.log(cube(3));`,
-
-    `function multiply(a, b) {
-    return a * b;
-}
-console.log(multiply(6, 7));`,
-
-    `function isPrime(n) {
-    for (let i = 2; i < n; i++) {
-        if (n % i === 0) return false;
+        `<?php
+function factorial($n) {
+    if ($n === 0) {
+        return 1;
     }
-    return n > 1;
+    return $n * factorial($n - 1);
 }
-console.log(isPrime(7));`,
+echo factorial(5);
+?>`,
 
-    `const subtract = (a, b) => a - b;
-console.log(subtract(10, 5));`,
+        `<?php
+$numbers = [1, 2, 3, 4];
+$doubled = array_map(fn($n) => $n * 2, $numbers);
+print_r($doubled);
+?>`,
 
-    `function sortArray(arr) {
-    return arr.sort((a, b) => a - b);
+        `<?php
+function greet($name) {
+    return "Hello, $name!";
 }
-console.log(sortArray([3, 1, 4, 1, 5]));`,
+echo greet('Coder');
+?>`,
 
-    `const greetings = ['Hello', 'Hi', 'Hey'];
-console.log(greetings.join(', '));`,
-
-    `function double(num) {
-    return num * 2;
+        `<?php
+function reverseString($str) {
+    return strrev($str);
 }
-console.log(double(7));`,
+echo reverseString('hello');
+?>`,
 
-    `function findMin(arr) {
-    return Math.min(...arr);
+        `<?php
+function isPalindrome($str) {
+    $cleaned = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $str));
+    return $cleaned === strrev($cleaned);
 }
-console.log(findMin([8, 3, 5, 1, 6]));`,
+echo isPalindrome('racecar') ? 'Palindrome' : 'Not Palindrome';
+?>`,
 
-    `const divide = (a, b) => a / b;
-console.log(divide(20, 4));`,
-
-    `function squareRoot(x) {
-    return Math.sqrt(x);
+        `<?php
+function getRandomInt($max) {
+    return rand(0, $max - 1);
 }
-console.log(squareRoot(16));`,
+echo getRandomInt(10);
+?>`
+    ],
+    sql: [
+        `CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`,
 
-    `function repeatString(str, times) {
-    return str.repeat(times);
-}
-console.log(repeatString('Hi', 3));`,
+        `SELECT name, email FROM users WHERE id = 1;`,
 
-    `const filterOdds = arr => arr.filter(n => n % 2 === 1);
-console.log(filterOdds([1, 2, 3, 4, 5]));`,
+        `UPDATE users SET email = 'newemail@example.com' WHERE id = 1;`,
 
-    `function concatStrings(str1, str2) {
-    return str1 + str2;
-}
-console.log(concatStrings('Hello', ' World'));`,
+        `DELETE FROM users WHERE id = 1;`,
 
-    `function getFirstElement(arr) {
-    return arr[0];
-}
-console.log(getFirstElement(['a', 'b', 'c']));`
-];
+        `INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');`,
 
+        `ALTER TABLE users ADD COLUMN phone VARCHAR(15);`,
+
+        `SELECT COUNT(*) AS user_count FROM users;`
+    ],
+    laravel: [
+        `Route::get('/welcome', function () {
+    return 'Welcome to Laravel!';
+});`,
+
+        `public function showUser($id) {
+    $user = User::find($id);
+    return response()->json($user);
+}`,
+
+        `Schema::table('users', function (Blueprint $table) {
+    $table->string('phone')->nullable();
+});`,
+
+        `Route::post('/user', function (Request $request) {
+    $user = User::create($request->all());
+    return response()->json($user, 201);
+});`,
+
+        `Route::put('/user/{id}', function (Request $request, $id) {
+    $user = User::find($id);
+    $user->update($request->all());
+    return response()->json($user, 200);
+});`,
+
+        `Route::delete('/user/{id}', function ($id) {
+    User::destroy($id);
+    return response()->json(null, 204);
+});`,
+
+        `public function showAllUsers() {
+    $users = User::all();
+    return view('users.index', compact('users'));
+}`
+    ]
+};
 
 let timer;
-let timeLeft = 60;
+let timeLeft;
 let currentSnippet = "";
 let errorCount = 0;
+let startTime; // Nueva variable para registrar el tiempo de inicio
 
 const codeDisplay = document.getElementById("code-display");
 const codeInput = document.getElementById("code-input");
@@ -159,12 +194,27 @@ const timerDisplay = document.getElementById("timer");
 const errorsDisplay = document.getElementById("errors");
 const startButton = document.getElementById("start-button");
 const resultDisplay = document.getElementById("result");
+const languageSelect = document.getElementById("language-select");
+
+// Function to load the saved language from localStorage
+function loadSavedLanguage() {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'javascript';
+    languageSelect.value = savedLanguage;
+    loadSnippet();
+}
+
+// Function to save the selected language to localStorage
+function saveSelectedLanguage() {
+    localStorage.setItem('selectedLanguage', languageSelect.value);
+}
 
 function startGame() {
     if (startButton.textContent === "Comenzar") {
         resetGame();
-        startTimer();
         loadSnippet();
+        setTimeBasedOnSnippetLength();
+        startTime = new Date(); // Registrar el tiempo de inicio
+        startTimer();
         codeInput.focus();
         startButton.textContent = "Parar";
     } else {
@@ -174,14 +224,12 @@ function startGame() {
 
 function resetGame() {
     clearInterval(timer);
-    timeLeft = 60;
     errorCount = 0;
-    timerDisplay.textContent = timeLeft;
     errorsDisplay.textContent = `Errores: ${errorCount}`;
     codeInput.value = "";
     codeInput.disabled = false;
     resultDisplay.textContent = "";
-    document.getElementById('new-snippet-button')?.remove(); 
+    document.getElementById('new-snippet-button')?.remove();
 }
 
 function startTimer() {
@@ -195,7 +243,9 @@ function startTimer() {
 }
 
 function loadSnippet() {
-    currentSnippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+    const selectedLanguage = languageSelect.value;
+    const snippets = codeSnippets[selectedLanguage];
+    currentSnippet = snippets[Math.floor(Math.random() * snippets.length)];
     displaySnippet();
 }
 
@@ -203,11 +253,16 @@ function displaySnippet() {
     codeDisplay.textContent = currentSnippet;
 }
 
+function setTimeBasedOnSnippetLength() {
+    const snippetLength = currentSnippet.length;
+    timeLeft = Math.max(Math.ceil(snippetLength / 3), 10); // Mínimo de 10 segundos
+    timerDisplay.textContent = timeLeft;
+}
+
 codeInput.addEventListener("input", () => {
     const inputText = codeInput.value;
     let displayText = "";
     let errorFound = false;
-    let localErrorCount = 0; 
 
     for (let i = 0; i < currentSnippet.length; i++) {
         if (i < inputText.length) {
@@ -215,7 +270,6 @@ codeInput.addEventListener("input", () => {
                 displayText += `<span style="color:white;">${currentSnippet[i]}</span>`;
             } else {
                 if (!errorFound) {
-                    localErrorCount++;
                     errorCount++;
                 }
                 displayText += `<span style="color:red;">${currentSnippet[i]}</span>`;
@@ -233,8 +287,6 @@ codeInput.addEventListener("input", () => {
         endGame(false);
     }
 });
-
-
 
 codeInput.addEventListener("keydown", (e) => {
     if (e.key === "Tab") {
@@ -260,7 +312,11 @@ function endGame(stoppedByUser) {
         const totalCharsInSnippet = currentSnippet.length;
         const efficiency = ((totalTypedChars - errorCount) / totalCharsInSnippet) * 100;
 
-        resultDisplay.innerHTML = `Estadísticas: Escribiste ${totalTypedChars} caracteres con ${errorCount} errores. Podrías escribir aproximadamente ${Math.floor((totalTypedChars / 60) * 60)} caracteres por minuto con una eficiencia del ${efficiency.toFixed(2)}%.`;
+        // Calcular el tiempo total transcurrido
+        const endTime = new Date();
+        const timeSpent = Math.max(0, Math.round((endTime - startTime) / 1000)); // Tiempo en segundos
+
+        resultDisplay.innerHTML = `Escribiste ${totalTypedChars} caracteres con ${errorCount} errores. Podrías escribir aproximadamente ${Math.floor((totalTypedChars / timeLeft) * 60)} caracteres por minuto con una eficiencia del ${efficiency.toFixed(2)}%.<br>Conseguido en ${timeSpent} segundos.`;
 
         const newSnippetButton = document.createElement('button');
         newSnippetButton.textContent = "Nuevo Código";
@@ -273,17 +329,21 @@ function endGame(stoppedByUser) {
 function loadNewSnippet() {
     codeInput.value = "";
     loadSnippet();
+    setTimeBasedOnSnippetLength(); // Reinicia el temporizador basado en la nueva longitud del snippet
     startButton.textContent = "Comenzar";
     resultDisplay.textContent = ""; 
     codeDisplay.innerHTML = "";
-    timerDisplay.textContent = 60;
-    timeLeft = 60;
     errorCount = 0;
     errorsDisplay.textContent = `Errores: ${errorCount}`;
     document.getElementById('new-snippet-button')?.remove();
 }
 
 startButton.addEventListener("click", startGame);
+languageSelect.addEventListener("change", () => {
+    saveSelectedLanguage(); // Guarda el lenguaje seleccionado
+    loadSnippet();
+    setTimeBasedOnSnippetLength(); // Actualiza el temporizador basado en el nuevo fragmento
+});
 
 const titleElement = document.getElementById('title');
 const text = titleElement.innerText;
@@ -327,15 +387,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Toggle between light and dark modes
+    // Cargar el tema guardado al cargar la página
+    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+    body.classList.add(savedTheme);
+
     themeToggle.addEventListener('click', () => {
         if (body.classList.contains('dark-mode')) {
             body.classList.remove('dark-mode');
             body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light-mode'); // Guardar la preferencia
         } else {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode'); // Guardar la preferencia
         }
     });
-});
 
+    loadSavedLanguage(); // Cargar el lenguaje guardado al cargar la página
+});

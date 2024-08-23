@@ -241,3 +241,33 @@ body.light-mode #sun-icon {
 body.light-mode #moon-icon {
     display: none;
 }
+
+/* Estilos para el select del lenguaje */
+.language-selector {
+    margin-top: 20px;
+}
+
+#language-select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#language-select:focus {
+    outline: none;
+    background-color: #222;
+    border-color: #777;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+#language-select option {
+    background-color: #111;
+    color: #fff;
+}
